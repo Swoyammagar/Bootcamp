@@ -34,6 +34,13 @@ export default function FormPage() {
       bio: ""
     }
   });
+  const {watch}= form;
+  const nameValue = watch("name");
+
+  useEffect(() => {
+    console.log("Name changed:", nameValue);
+  }, [nameValue]);
+
 
   function onSubmit(values: FormValues) {
     console.log("Submitted:", values);
